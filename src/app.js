@@ -3,6 +3,7 @@ import './bootstrap';
 import * as Sentry from '@sentry/node';
 import cors from 'cors';
 import express from 'express';
+import RateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import Youch from 'youch';
 import 'express-async-errors';
@@ -28,6 +29,15 @@ class App {
     this.server.use(helmet());
     this.server.use(cors());
     this.server.use(express.json());
+
+    if (process.env.NODE_ENV !== 'development') {
+      this.server.use(
+        new RateLimit({
+          windowMs: 15 * 60 * 1000,
+          max: 100,
+        })
+      );
+    }
   }
 
   routes() {

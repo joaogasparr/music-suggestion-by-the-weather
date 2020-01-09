@@ -5,9 +5,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/server.js",
+    "start": "sucrase-node src/server.js",
     "build": "sucrase ./src -d ./dist --transforms imports",
     "pretest": "NODE_ENV=test sequelize db:migrate",
-    "test": "jest",
+    "test": "jest --runInBand",
     "posttest": "NODE_ENV=test sequelize db:migrate:undo:all"
   },
   "dependencies": {

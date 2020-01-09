@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@sentry/node": "5.11.0",
+    "axios": "^0.19.1",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
@@ -21,6 +22,7 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
+    "qs": "^6.9.1",
     "sequelize": "^5.9.4",
     "youch": "^2.0.10",
     "yup": "^0.28.0"

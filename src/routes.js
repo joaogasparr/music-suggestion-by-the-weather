@@ -2,6 +2,7 @@ import { Router } from 'express';
 
 import SessionController from './app/controllers/SessionController';
 import UserController from './app/controllers/UserController';
+import WeatherController from './app/controllers/WeatherController';
 import authMiddlewares from './app/middlewares/auth';
 import validateSessionStore from './app/validators/Session/Store';
 import validateUserStore from './app/validators/User/Store';
@@ -17,5 +18,7 @@ routes.post('/sessions', validateSessionStore, SessionController.store);
 routes.use(authMiddlewares);
 // Users
 routes.put('/users', validateUserUpdate, UserController.update);
+// Weather
+routes.post('/weathers', WeatherController.store);
 
 export default routes;

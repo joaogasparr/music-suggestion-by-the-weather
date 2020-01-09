@@ -20,6 +20,7 @@ module.exports = {
     'no-param-reassign': 'off',
     camelcase: 'off',
     'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
+    'new-cap': ['error', { newIsCap: false }],
     'import-helpers/order-imports': [
       'warn',
       {

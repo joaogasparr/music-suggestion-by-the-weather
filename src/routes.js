@@ -26,7 +26,7 @@ routes.post(
 // Middlewares
 routes.use(authMiddlewares);
 // Users
-routes.put('/users', validateUserUpdate, UserController.update);
+routes.put('/users/:id', validateUserUpdate, UserController.update);
 // Weather
 routes.post('/weathers', WeatherController.store);
 
